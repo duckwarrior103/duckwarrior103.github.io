@@ -3,11 +3,9 @@
 @tailwind utilities;
 
 html {
-    scrollbar-gutter: stable; /* Reserve space for the scrollbar */
-    overflow-x: clip;
+  scrollbar-gutter: stable; /* Reserve space for the scrollbar */
+  overflow-x: clip;
 }
 body * {
-    
-    @apply transition-colors duration-0;
-    
+  @apply transition-colors duration-0;
 }
