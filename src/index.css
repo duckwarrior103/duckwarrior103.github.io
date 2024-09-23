@@ -4,8 +4,10 @@
 
 html {
     scrollbar-gutter: stable; /* Reserve space for the scrollbar */
-    overflow-x: clip
+    overflow-x: clip;
 }
 body * {
+    
     @apply transition-colors duration-0;
+    
 }

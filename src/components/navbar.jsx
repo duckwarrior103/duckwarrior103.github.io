@@ -17,18 +17,15 @@ export default function Navbar() {
         elem?.blur();
       }
     };
-    const handleClick2 = () => {
-        const elem = document.activeElement;
-        if (elem) {
-          elem?.focus();
-        }
-      }
     
     return (
         <>
-        <div className="navbar bg-base-100">
-            <div className="navbar-start">
-    <div className="dropdown" onClick={handleClick2}>
+        <div tabIndex={0}>
+          
+        
+          <div className="navbar bg-base-100"  >
+        <div className="navbar-start">
+    <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden" >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -104,6 +101,7 @@ export default function Navbar() {
   </div>
 </label>
               </div>
+            </div>
             </div>
         </>
     );

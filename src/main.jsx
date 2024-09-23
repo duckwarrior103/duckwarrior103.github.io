@@ -5,6 +5,7 @@ import About from './routes/about.jsx'
 import Timeline from './routes/timeline.jsx';
 import Projects from './routes/projects.jsx';
 import ErrorPage from "./error-page";
+import App from './App.jsx';
 
 import {
   createBrowserRouter,
@@ -12,25 +13,27 @@ import {
 } from "react-router-dom";
 
 import './index.css'
-import Navbar from './components/navbar.jsx';
-
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>,
+    element: <App/>,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "about",
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/about",
         element: <About />,
       },
       {
-        path: "timeline",
+        path: "/timeline",
         element: <Timeline/>,
       },
       {
-        path: "projects",
+        path: "/projects",
         element: <Projects/>,
       },
     ],
