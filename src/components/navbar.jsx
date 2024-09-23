@@ -1,13 +1,63 @@
-import { Outlet, Link, NavLink} from "react-router-dom";
-export default function Root() {
+import { useState, useEffect } from "react";
+import {Link, NavLink} from "react-router-dom"
+import { Outlet } from "react-router-dom";
+
+export default function Navbar() {
+  const [theme, setTheme] = useState('light');
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
+  useEffect(() => {
+    document.querySelector('html').setAttribute('data-theme', theme);
+  }, [theme]);
+
+    const handleClick = () => {
+      const elem = document.activeElement;
+      if (elem) {
+        elem?.blur();
+      }
+    };
+    const handleClick2 = () => {
+        const elem = document.activeElement;
+        if (elem) {
+          elem?.focus();
+        }
+      }
+    
     return (
         <>
-          <div class="overflow-y-scroll overflow-x-clip">
-            <div class="navbar bg-base-100">
-              <div class="navbar-start">
-                <Link class="btn btn-ghost text-xl" to ={'/'}>Kyan's Website</Link>
-              </div>
-              <div class="navbar-center">
+        <div className="navbar bg-base-100">
+            <div className="navbar-start">
+    <div className="dropdown" onClick={handleClick2}>
+      <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden" >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M4 6h16M4 12h8m-8 6h16" />
+        </svg>
+      </div>
+      <ul
+        tabIndex={0}
+        className="menu menu-sm absolute dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+        <li onClick={handleClick}><Link className="btn btn-ghost text-xl" to={'/about'}>about</Link></li>
+        <li onClick={handleClick}><Link className="btn btn-ghost text-xl" to={'/timeline'}>timeline</Link></li>
+        <li onClick={handleClick}><Link className="btn btn-ghost text-xl" to={'/projects'}>projects</Link></li>
+      </ul>
+    </div>
+    <Link className="btn btn-ghost text-xl hidden lg:flex" to={'/'}>Kyan's Land</Link>
+  </div>
+  <div className="navbar-center lg:hidden">
+  <Link className="btn btn-ghost text-xl" to={'/'}>Kyan's Land</Link>
+  </div>
+              <div className="navbar-center hidden lg:flex">
+
                 <NavLink className={({ isActive }) => 
                       isActive 
                           ? "btn btn-ghost text-xl underline"  // Active state styles
@@ -28,7 +78,7 @@ export default function Root() {
                 
   <label className="swap swap-rotate">
   {/* this hidden checkbox controls the state */}
-  <input type="checkbox" />
+  <input onClick={toggleTheme} type="checkbox" />
 
   {/* sun icon */}
   <div className="swap-on">
@@ -55,9 +105,6 @@ export default function Root() {
 </label>
               </div>
             </div>
-              <Outlet/>
-
-          </div>
         </>
     );
 }

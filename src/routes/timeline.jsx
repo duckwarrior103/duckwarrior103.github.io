@@ -2,7 +2,7 @@ export default function Timeline() {
     return (
       <>
       <div class="w-full px-8 py-8">
-      <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+      <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical w-full max-w-6xl mx-auto">
           <li>
             <div class="timeline-middle">
               <svg

@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import Root from './routes/root.jsx';
+import Home from './routes/home.jsx';
 import About from './routes/about.jsx'
 import Timeline from './routes/timeline.jsx';
 import Projects from './routes/projects.jsx';
@@ -12,12 +12,13 @@ import {
 } from "react-router-dom";
 
 import './index.css'
+import Navbar from './components/navbar.jsx';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root/>,
+    element: <Home/>,
     errorElement: <ErrorPage />,
     children: [
       {
@@ -34,6 +35,9 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "about"
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(
