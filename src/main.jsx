@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import Root from './routes/root.jsx';
 import About from './routes/about.jsx'
 import Timeline from './routes/timeline.jsx';
+import Projects from './routes/projects.jsx';
 import ErrorPage from "./error-page";
 
 import {
@@ -11,6 +12,7 @@ import {
 } from "react-router-dom";
 
 import './index.css'
+
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "timeline",
         element: <Timeline/>,
+      },
+      {
+        path: "projects",
+        element: <Projects/>,
       },
     ],
   },
