@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 export default function Navbar() {
   const [theme, setTheme] = useState('light');
   const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
+    setTimeout(()=>setTheme(theme === 'dark' ? 'light' : 'dark'), 150)
   };
   useEffect(() => {
     document.querySelector('html').setAttribute('data-theme', theme);

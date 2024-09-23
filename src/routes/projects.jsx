@@ -2,7 +2,7 @@ export default function Projects() {
 
     return (
         <>
-            <div class="grid grid-cols-4 gap-10 px-4 py-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 px-4 py-4">
                 <div class="card bg-base-100 shadow-xl">
                     <figure>
                       <img

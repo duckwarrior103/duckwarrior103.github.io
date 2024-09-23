@@ -1,6 +1,30 @@
+import Transition from "react-transition-group/cjs/Transition";
+import { useRef, useEffect, useState} from "react";
+
+const duration = 1000;
+
+  const transitionStyles = {
+      entering: 'opacity-100',
+      entered: 'opacity-100',
+      exiting: 'opacity-0',
+      exited: 'opacity-0',
+    };
+
 export default function Timeline() {
+  
+  const nodeRef = useRef(null);
+    const [inProp, setInProp] = useState(false);
+    useEffect(() => {
+        setInProp(true);
+      }, []);
+
     return (
       <>
+      <Transition nodeRef={nodeRef} in={inProp} timeout={duration}>
+        {state => (
+          <div 
+          ref={nodeRef} 
+          className={`transition-opacity duration-1000 ease-in-out ${transitionStyles[state]}`}>
       <div class="w-full px-8 py-8">
       <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical w-full max-w-6xl mx-auto">
           <li>
@@ -130,7 +154,9 @@ export default function Timeline() {
           </li>
       </ul>
       </div>
-      
+      </div>
+      )}
+      </Transition>
       </>
     );
 }
