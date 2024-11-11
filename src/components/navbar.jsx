@@ -82,17 +82,6 @@ export default function Navbar() {
                     ? "btn btn-ghost text-xl underline" // Active state styles
                     : "btn btn-ghost text-xl" // Non-active and hover styles
               }
-              to={"/about"}
-            >
-              About
-            </NavLink>
-            <NavLink
-              className={
-                ({ isActive }) =>
-                  isActive
-                    ? "btn btn-ghost text-xl underline" // Active state styles
-                    : "btn btn-ghost text-xl" // Non-active and hover styles
-              }
               to={"/timeline"}
             >
               Timeline
