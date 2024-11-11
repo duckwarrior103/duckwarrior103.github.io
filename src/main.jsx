@@ -1,7 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import Home from "./routes/home.jsx";
-import About from "./routes/about.jsx";
 import Timeline from "./routes/timeline.jsx";
 import Projects from "./routes/projects.jsx";
 import ErrorPage from "./error-page";
