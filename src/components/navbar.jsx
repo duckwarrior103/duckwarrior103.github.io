@@ -49,11 +49,6 @@ export default function Navbar() {
                 className="menu menu-sm absolute dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
               >
                 <li onClick={handleClick}>
-                  <Link className="btn btn-ghost text-xl" to={"/about"}>
-                    about
-                  </Link>
-                </li>
-                <li onClick={handleClick}>
                   <Link className="btn btn-ghost text-xl" to={"/timeline"}>
                     timeline
                   </Link>
